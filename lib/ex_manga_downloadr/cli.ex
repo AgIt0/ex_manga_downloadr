@@ -53,6 +53,7 @@ defmodule ExMangaDownloadr.CLI do
       |> Workflow.chapters
       |> Workflow.pages
       |> Workflow.images_sources
+      |> Enum.reject(fn(x) -> x == nil end)
       |> Workflow.process_downloads(directory)
       |> Workflow.optimize_images
       |> Workflow.compile_pdfs(manga_name)

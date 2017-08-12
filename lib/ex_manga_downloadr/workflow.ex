@@ -14,6 +14,8 @@ defmodule ExMangaDownloadr.Workflow do
         "mangareader"
       Regex.match?(~r/mangafox\.me/, url) ->
         "mangafox"
+      Regex.match?(~r/wiemanga\.com/, url) ->
+        "wiemanga"
       true ->
         IO.puts "Wasn't able to determine the manga source, URL invalid."
         System.halt(0)

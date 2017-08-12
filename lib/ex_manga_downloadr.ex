@@ -57,8 +57,8 @@ defmodule ExMangaDownloadr do
           end
     rescue
       _ in HTTPoison.Error ->
-	      :timer.sleep(@time_to_wait_to_fetch_again)
-	      retryable_http_get(url, retries - 1)
+        :timer.sleep(@time_to_wait_to_fetch_again)
+        retryable_http_get(url, retries - 1)
     end
   end
 
@@ -90,6 +90,14 @@ defmodule ExMangaDownloadr do
       alias ExMangaDownloadr.Mangafox.IndexPage
       alias ExMangaDownloadr.Mangafox.ChapterPage
       alias ExMangaDownloadr.Mangafox.Page
+    end
+  end
+
+  def wiemanga do
+    quote do
+      alias ExMangaDownloadr.WieManga.IndexPage
+      alias ExMangaDownloadr.WieManga.ChapterPage
+      alias ExMangaDownloadr.WieManga.Page
     end
   end
 

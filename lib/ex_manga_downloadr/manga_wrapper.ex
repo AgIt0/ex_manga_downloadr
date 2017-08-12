@@ -30,6 +30,7 @@ defmodule MangaWrapper do
     case source do
       "mangareader" -> :"Elixir.ExMangaDownloadr.MangaReader.#{module}"
       "mangafox"    -> :"Elixir.ExMangaDownloadr.Mangafox.#{module}"
+      "wiemanga"    -> :"Elixir.ExMangaDownloadr.WieManga.#{module}"
     end
   end
 
